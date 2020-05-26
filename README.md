@@ -5,18 +5,30 @@
 ## My NOTES
 
 https://github.com/dotnet-architecture/eShopOnContainers/wiki/Docker-configuration
+https://github.com/dotnet-architecture/eShopOnContainers/wiki/Windows-setup
+
+
+Main steps to run on the CLI command window:  
+
+- Git clone https://github.com/dotnet/eShopOnContainers.git
+- cd eShopOnContainers
+- Docker-compose build
+- Docker-compose build --build-arg RESTORECMD=scripts/restore-packages
+- Docker-compose up 
+(Alternatively, you can directly just run Docker-compose up and it will run the "build" command, first)
+- Using a browser, try the MVC app at http://localhost:5100
+
+As a workaround, use docker-compose up and when the services are up navigate to
+http://docker.for.win.localhost:5100/ for webmvc and
+http://docker.for.win.localhost:5104/ for webspa
+
 
 1.- Execute poweshell task
 C:\eShopOnContainers\deploy\windows\
 
 add-firewall-rules-for-sts-auth-thru-docker.ps1
 
-2.- Execute docker task
-
-C:\eShopOnContainers\src>docker-compose build --build-arg RESTORECMD=scripts/restore-packages
-
-
-3.- Verify endpoints
+2.- Verify endpoints
 localhost:5107/hc-ui#/healthchecks
 
 localhost:5100
@@ -24,6 +36,7 @@ user: 		demouser@microsoft.com
 password: 	Pass@word1
 
 localhost:5340/#/events
+
 
 # .NET Microservices Sample Reference Application
 
