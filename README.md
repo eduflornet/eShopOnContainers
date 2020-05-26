@@ -2,6 +2,29 @@
    <img src="https://github.com/dotnet-architecture/eShopOnContainers/raw/dev/img/eshop_logo.png" alt="eShop logo" title="eShopOnContainers" align="right" height="60" />
 </a>
 
+## My NOTES
+
+https://github.com/dotnet-architecture/eShopOnContainers/wiki/Docker-configuration
+
+1.- Execute poweshell task
+C:\eShopOnContainers\deploy\windows\
+
+add-firewall-rules-for-sts-auth-thru-docker.ps1
+
+2.- Execute docker task
+
+C:\eShopOnContainers\src>docker-compose build --build-arg RESTORECMD=scripts/restore-packages
+
+
+3.- Verify endpoints
+localhost:5107/hc-ui#/healthchecks
+
+localhost:5100
+user: 		demouser@microsoft.com
+password: 	Pass@word1
+
+localhost:5340/#/events
+
 # .NET Microservices Sample Reference Application
 
 Sample .NET Core reference application, powered by Microsoft, based on a simplified microservices architecture and Docker containers.
